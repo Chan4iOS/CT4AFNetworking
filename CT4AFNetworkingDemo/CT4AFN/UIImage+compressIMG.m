@@ -2,7 +2,7 @@
 //  UIImage+compressIMG.m
 //
 //  Created by 陈世翰 on 16/5/18.
-//  Copyright © 2016年 tentcoo. All rights reserved.
+//  Copyright © 2016年 陈世翰. All rights reserved.
 //
 
 #import "UIImage+compressIMG.h"

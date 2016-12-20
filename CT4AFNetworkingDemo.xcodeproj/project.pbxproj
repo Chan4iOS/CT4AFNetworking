@@ -443,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CT4AFNetworkingDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Chan4iOS.CT4AFNetworkingDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CT4AFNetworkingDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Chan4iOS.CT4AFNetworkingDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -525,6 +527,7 @@
 				64F5472D1E07D33300810795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64F5472E1E07D33300810795 /* Build configuration list for PBXNativeTarget "CT4AFNetworkingDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +536,7 @@
 				64F547301E07D33300810795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64F547311E07D33300810795 /* Build configuration list for PBXNativeTarget "CT4AFNetworkingDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +545,7 @@
 				64F547331E07D33300810795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
