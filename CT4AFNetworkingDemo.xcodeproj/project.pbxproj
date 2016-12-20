@@ -17,6 +17,7 @@
 		64F547271E07D33300810795 /* CT4AFNetworkingDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F547261E07D33300810795 /* CT4AFNetworkingDemoUITests.m */; };
 		64F547391E07D3AB00810795 /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F547361E07D3AB00810795 /* NetWorkManager.m */; };
 		64F5473A1E07D3AB00810795 /* UIImage+compressIMG.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F547381E07D3AB00810795 /* UIImage+compressIMG.m */; };
+		D6CB36453596D3C33BF584CD /* libPods-CT4AFNetworkingDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9EF442D2A09C5B6A2260ED /* libPods-CT4AFNetworkingDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B9EF442D2A09C5B6A2260ED /* libPods-CT4AFNetworkingDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CT4AFNetworkingDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2616F396857842BB1ED815FE /* Pods-CT4AFNetworkingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CT4AFNetworkingDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CT4AFNetworkingDemo/Pods-CT4AFNetworkingDemo.release.xcconfig"; sourceTree = "<group>"; };
+		286FC64819BE4F373A03024F /* Pods-CT4AFNetworkingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CT4AFNetworkingDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CT4AFNetworkingDemo/Pods-CT4AFNetworkingDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		64F546FE1E07D33300810795 /* CT4AFNetworkingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CT4AFNetworkingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F547021E07D33300810795 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64F547041E07D33300810795 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6CB36453596D3C33BF584CD /* libPods-CT4AFNetworkingDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +96,8 @@
 				64F5471A1E07D33300810795 /* CT4AFNetworkingDemoTests */,
 				64F547251E07D33300810795 /* CT4AFNetworkingDemoUITests */,
 				64F546FF1E07D33300810795 /* Products */,
+				CBAF7B01797E22A1BC0019EA /* Pods */,
+				C140E2A3FA47BB2222601F8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +165,23 @@
 			path = CT4AFN;
 			sourceTree = "<group>";
 		};
+		C140E2A3FA47BB2222601F8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B9EF442D2A09C5B6A2260ED /* libPods-CT4AFNetworkingDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBAF7B01797E22A1BC0019EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				286FC64819BE4F373A03024F /* Pods-CT4AFNetworkingDemo.debug.xcconfig */,
+				2616F396857842BB1ED815FE /* Pods-CT4AFNetworkingDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64F5472B1E07D33300810795 /* Build configuration list for PBXNativeTarget "CT4AFNetworkingDemo" */;
 			buildPhases = (
+				06C22936F644504F5CC55F10 /* [CP] Check Pods Manifest.lock */,
 				64F546FA1E07D33300810795 /* Sources */,
 				64F546FB1E07D33300810795 /* Frameworks */,
 				64F546FC1E07D33300810795 /* Resources */,
+				5E785EBE84F553BF6FC3BD47 /* [CP] Embed Pods Frameworks */,
+				6224166B319A2E3EF13621E7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,6 +312,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06C22936F644504F5CC55F10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E785EBE84F553BF6FC3BD47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CT4AFNetworkingDemo/Pods-CT4AFNetworkingDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6224166B319A2E3EF13621E7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CT4AFNetworkingDemo/Pods-CT4AFNetworkingDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		64F546FA1E07D33300810795 /* Sources */ = {
@@ -440,6 +515,7 @@
 		};
 		64F5472C1E07D33300810795 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 286FC64819BE4F373A03024F /* Pods-CT4AFNetworkingDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CT4AFNetworkingDemo/Info.plist;
@@ -452,6 +528,7 @@
 		};
 		64F5472D1E07D33300810795 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2616F396857842BB1ED815FE /* Pods-CT4AFNetworkingDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CT4AFNetworkingDemo/Info.plist;
