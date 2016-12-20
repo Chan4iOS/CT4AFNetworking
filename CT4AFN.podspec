@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CT4AFN'
-  s.version      = '0.1.1'
+  s.version      = '0.1.2'
   s.summary      = 'Code encapsulation for AFNetworking'
   s.homepage     = 'https://github.com/Chan4iOS/CT4AFNetworking'
   s.author       = "CT4 => 284766710@qq.com"
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.libraries = 'z'
   s.dependency 'AFNetworking', '~> 3'
-  s.license = { :type => "MIT", :text => <<-LICENSE
+  s.license = 'MIT'
 
 
 end
