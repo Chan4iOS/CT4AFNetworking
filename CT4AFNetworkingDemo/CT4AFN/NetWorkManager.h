@@ -5,8 +5,7 @@
 //  Copyright © 2016年 陈世翰. All rights reserved.
 //
 
-#import "AFNetworking.h"
-
+#import <AFNetworking/AFNetworking.h>
 
 #define NetWorkManager_BASE_URL @""
 /**定义请求类型的枚举*/
