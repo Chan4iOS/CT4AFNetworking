@@ -87,7 +87,7 @@
         [self.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
         
         
-#warning 此处做为测试 可根据自己应用设置相应的值
+//        此处做为测试 可根据自己应用设置相应的值
         
         /**设置apikey ------类似于自己应用中的tokken---此处仅仅作为测试使用*/
         
