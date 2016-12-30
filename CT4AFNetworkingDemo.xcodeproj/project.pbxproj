@@ -252,6 +252,7 @@
 				TargetAttributes = {
 					64F546FD1E07D33300810795 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 2CWHS886W3;
 						ProvisioningStyle = Automatic;
 					};
 					64F547161E07D33300810795 = {
@@ -519,6 +520,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = 2CWHS886W3;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CT4AFNetworkingDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -533,6 +536,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = 2CWHS886W3;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CT4AFNetworkingDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -501,13 +501,26 @@
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         //-1009 断网  -1011 已经有该文件
-        if (error.code == -1009) {
-            if (failureBlock) {
-                failureBlock(@"-1009:wrong网络中断");
-            }
-        }
         if (error == nil) {
             successBlock(nil);
+        }else{
+            switch (error.code) {
+                case 416:{
+                    if (successBlock) {
+                        successBlock(nil);
+                    }
+                }break;
+                case -1009:{
+                    if (failureBlock) {
+                        failureBlock(@"-1009:wrong网络中断");
+                    }
+                }break;
+                default:
+                    break;
+            }
+            if (failureBlock) {
+                failureBlock(error.localizedDescription);
+            }
         }
         
     }];
