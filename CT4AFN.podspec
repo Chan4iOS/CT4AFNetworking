@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CT4AFN'
-  s.version      = '0.2.3'
+  s.version      = '0.2.4'
   s.summary      = 'Code encapsulation for AFNetworking'
   s.homepage     = 'https://github.com/Chan4iOS/CT4AFNetworking'
   s.author       = "CT4 => 284766710@qq.com"

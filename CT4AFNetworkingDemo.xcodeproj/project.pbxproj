@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		640E55031EA5F4C300203940 /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 640E55001EA5F4C300203940 /* NetWorkManager.m */; };
+		640E55041EA5F4C300203940 /* UIImage+compressIMG.m in Sources */ = {isa = PBXBuildFile; fileRef = 640E55021EA5F4C300203940 /* UIImage+compressIMG.m */; };
 		64F547031E07D33300810795 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F547021E07D33300810795 /* main.m */; };
 		64F547061E07D33300810795 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F547051E07D33300810795 /* AppDelegate.m */; };
 		64F547091E07D33300810795 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F547081E07D33300810795 /* ViewController.m */; };
@@ -15,8 +17,6 @@
 		64F547111E07D33300810795 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F5470F1E07D33300810795 /* LaunchScreen.storyboard */; };
 		64F5471C1E07D33300810795 /* CT4AFNetworkingDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F5471B1E07D33300810795 /* CT4AFNetworkingDemoTests.m */; };
 		64F547271E07D33300810795 /* CT4AFNetworkingDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F547261E07D33300810795 /* CT4AFNetworkingDemoUITests.m */; };
-		64F547391E07D3AB00810795 /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F547361E07D3AB00810795 /* NetWorkManager.m */; };
-		64F5473A1E07D3AB00810795 /* UIImage+compressIMG.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F547381E07D3AB00810795 /* UIImage+compressIMG.m */; };
 		D6CB36453596D3C33BF584CD /* libPods-CT4AFNetworkingDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9EF442D2A09C5B6A2260ED /* libPods-CT4AFNetworkingDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +41,10 @@
 		1B9EF442D2A09C5B6A2260ED /* libPods-CT4AFNetworkingDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CT4AFNetworkingDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2616F396857842BB1ED815FE /* Pods-CT4AFNetworkingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CT4AFNetworkingDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CT4AFNetworkingDemo/Pods-CT4AFNetworkingDemo.release.xcconfig"; sourceTree = "<group>"; };
 		286FC64819BE4F373A03024F /* Pods-CT4AFNetworkingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CT4AFNetworkingDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CT4AFNetworkingDemo/Pods-CT4AFNetworkingDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		640E54FF1EA5F4C300203940 /* NetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
+		640E55001EA5F4C300203940 /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
+		640E55011EA5F4C300203940 /* UIImage+compressIMG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+compressIMG.h"; sourceTree = "<group>"; };
+		640E55021EA5F4C300203940 /* UIImage+compressIMG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+compressIMG.m"; sourceTree = "<group>"; };
 		64F546FE1E07D33300810795 /* CT4AFNetworkingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CT4AFNetworkingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F547021E07D33300810795 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64F547041E07D33300810795 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,10 +61,6 @@
 		64F547221E07D33300810795 /* CT4AFNetworkingDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CT4AFNetworkingDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F547261E07D33300810795 /* CT4AFNetworkingDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CT4AFNetworkingDemoUITests.m; sourceTree = "<group>"; };
 		64F547281E07D33300810795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64F547351E07D3AB00810795 /* NetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
-		64F547361E07D3AB00810795 /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
-		64F547371E07D3AB00810795 /* UIImage+compressIMG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+compressIMG.h"; sourceTree = "<group>"; };
-		64F547381E07D3AB00810795 /* UIImage+compressIMG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+compressIMG.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +89,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		640E54FE1EA5F4C300203940 /* CT4AFN */ = {
+			isa = PBXGroup;
+			children = (
+				640E54FF1EA5F4C300203940 /* NetWorkManager.h */,
+				640E55001EA5F4C300203940 /* NetWorkManager.m */,
+				640E55011EA5F4C300203940 /* UIImage+compressIMG.h */,
+				640E55021EA5F4C300203940 /* UIImage+compressIMG.m */,
+			);
+			path = CT4AFN;
+			sourceTree = "<group>";
+		};
 		64F546F51E07D33300810795 = {
 			isa = PBXGroup;
 			children = (
+				640E54FE1EA5F4C300203940 /* CT4AFN */,
 				64F547001E07D33300810795 /* CT4AFNetworkingDemo */,
 				64F5471A1E07D33300810795 /* CT4AFNetworkingDemoTests */,
 				64F547251E07D33300810795 /* CT4AFNetworkingDemoUITests */,
@@ -114,7 +126,6 @@
 		64F547001E07D33300810795 /* CT4AFNetworkingDemo */ = {
 			isa = PBXGroup;
 			children = (
-				64F547341E07D3AB00810795 /* CT4AFN */,
 				64F547011E07D33300810795 /* Supporting Files */,
 			);
 			path = CT4AFNetworkingDemo;
@@ -152,17 +163,6 @@
 				64F547281E07D33300810795 /* Info.plist */,
 			);
 			path = CT4AFNetworkingDemoUITests;
-			sourceTree = "<group>";
-		};
-		64F547341E07D3AB00810795 /* CT4AFN */ = {
-			isa = PBXGroup;
-			children = (
-				64F547351E07D3AB00810795 /* NetWorkManager.h */,
-				64F547361E07D3AB00810795 /* NetWorkManager.m */,
-				64F547371E07D3AB00810795 /* UIImage+compressIMG.h */,
-				64F547381E07D3AB00810795 /* UIImage+compressIMG.m */,
-			);
-			path = CT4AFN;
 			sourceTree = "<group>";
 		};
 		C140E2A3FA47BB2222601F8C /* Frameworks */ = {
@@ -367,9 +367,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64F547391E07D3AB00810795 /* NetWorkManager.m in Sources */,
+				640E55031EA5F4C300203940 /* NetWorkManager.m in Sources */,
 				64F547091E07D33300810795 /* ViewController.m in Sources */,
-				64F5473A1E07D3AB00810795 /* UIImage+compressIMG.m in Sources */,
+				640E55041EA5F4C300203940 /* UIImage+compressIMG.m in Sources */,
 				64F547061E07D33300810795 /* AppDelegate.m in Sources */,
 				64F547031E07D33300810795 /* main.m in Sources */,
 			);

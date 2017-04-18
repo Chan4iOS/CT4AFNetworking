@@ -87,7 +87,7 @@
         [self.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
         
         
-#warning 此处做为测试 可根据自己应用设置相应的值
+//        此处做为测试 可根据自己应用设置相应的值
         
         /**设置apikey ------类似于自己应用中的tokken---此处仅仅作为测试使用*/
         
@@ -173,6 +173,7 @@
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
             [request setHTTPMethod:@"POST"];
             [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Contsetent-Type"];
+            [request addValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
             [request setHTTPBody:body];
             [request setTimeoutInterval:30.0f];
             NSURLSessionDataTask *dataTask = [[NetWorkManager shareManager] dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
@@ -470,114 +471,14 @@
 #pragma mark -断点下载
 
 /**
- *  文件下载
+ *  简单的文件下载  暂时只支持单个任务下载,不支持同时存在多个下载进程
  *
- *  @param operations   文件下载预留参数---视具体情况而定 可移除
+ *  @param urlString    url
  *  @param savePath     下载文件保存路径
+ *  @param successBlock 成功的回调
  
  *  @param progress     下载文件的进度显示
  */
-
-//+(NSURLSessionDataTask *)continuedDownLoadFileWithSavaPath:(NSString *)savePath withUrlString:(NSString *)urlString withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(commonFailure)failureBlock withDownLoadProgress:(commonProgress)progress
-//{
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:urlString]];
-//
-//    long long downloadedBytes =[self fileSizeForPath:savePath];
-//    if (downloadedBytes > 0) {
-//
-//        NSString *requestRange = [NSString stringWithFormat:@"bytes=%llu-", downloadedBytes];
-//        [request setValue:requestRange forHTTPHeaderField:@"Range"];
-//    }else{
-//
-//        int fileDescriptor = open([savePath UTF8String],O_CREAT |O_EXCL |O_RDWR,0666);
-//        if (fileDescriptor > 0) {
-//            close(fileDescriptor);
-//        }
-//    }
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-////    [manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"video/mpeg",nil]];
-//    NSURLSessionDataTask *dataTask =  [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil receiveData:^(NSURLSession * _Nonnull session, NSURLSessionDataTask * _Nonnull dataTask, NSData * _Nonnull data) {
-//        long long totalContentLength=0;
-//        //根据status code的不同，做相应的处理
-//        NSHTTPURLResponse *response = (NSHTTPURLResponse*)dataTask.response;
-//        if (response.statusCode ==200) {
-//
-//            totalContentLength = dataTask.countOfBytesExpectedToReceive;
-//
-//        }else if (response.statusCode ==206){//客户发送了一个带有Range头的GET请求（分块请求），服务器完成了它
-//
-//            NSString *contentRange = [response.allHeaderFields valueForKey:@"Content-Range"];
-//            if ([contentRange hasPrefix:@"bytes"]) {
-//                NSArray *bytes = [contentRange componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" -/"]];
-//                if ([bytes count] == 4) {
-//                    totalContentLength = [[bytes objectAtIndex:3]longLongValue];
-//                }
-//            }
-//        }else if (response.statusCode ==416){//Requested Range Not Satisfiable 服务器不能满足客户在请求中指定的Range头
-//
-//            NSString *contentRange = [response.allHeaderFields valueForKey:@"Content-Range"];
-//            if ([contentRange hasPrefix:@"bytes"]) {
-//                NSArray *bytes = [contentRange componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" -/"]];
-//                if ([bytes count] == 3) {
-//
-//                    totalContentLength = [[bytes objectAtIndex:2]longLongValue];
-//                    if (downloadedBytes==totalContentLength) {
-//
-//                        //说明已下完
-//
-//                        //更新进度
-//                        if (progress) {
-//                            progress(1,totalContentLength*1.f/ 1024.f / 1024.0f,totalContentLength*1.f/ 1024.f / 1024.0f);
-//                        }
-//                    }else{
-//
-//                        if (failureBlock) {
-//                            failureBlock(@"416:wrong");
-//                        }
-//
-//                    }
-//                }
-//            }else{
-//                if (successBlock) {
-//                    successBlock(nil);
-//                }
-//            }
-//            return;
-//        }
-//        if (response.statusCode == 404) {
-//            if (failureBlock) {
-//                failureBlock(@"404:url不存在");
-//            }
-//        }
-//
-//        //向文件追加数据
-//        NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:savePath];
-//        [fileHandle seekToEndOfFile]; //将节点跳到文件的末尾
-//
-//        [fileHandle writeData:data];//追加写入数据
-//        [fileHandle closeFile];
-//
-//        //更新进度
-//        CGFloat curread =[self fileSizeForPath:savePath];
-//        CGFloat progressValue =curread*1.f/totalContentLength;
-//        if (progress) {
-//            progress(progressValue,curread*1.f / 1024.f / 1024.0f,totalContentLength*1.f/ 1024.f / 1024.0f);
-//        };
-//    } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-//        //-1009 断网  -1011 已经有该文件
-//        if (error.code == -1009) {
-//            if (failureBlock) {
-//                failureBlock(@"-1009:wrong网络中断");
-//            }
-//        }
-//        if (error == nil) {
-//            successBlock(nil);
-//        }
-//    }];
-//    return dataTask;
-//}
-
 
 +(NSURLSessionDataTask *)continuedDownLoadFileWithSavaPath:(NSString *)savePath withUrlString:(NSString *)urlString withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(commonFailure)failureBlock withDownLoadProgress:(commonProgress)progress
 {
@@ -601,13 +502,26 @@
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         //-1009 断网  -1011 已经有该文件
-        if (error.code == -1009) {
-            if (failureBlock) {
-                failureBlock(@"-1009:wrong网络中断");
-            }
-        }
         if (error == nil) {
             successBlock(nil);
+        }else{
+            switch (error.code) {
+                case 416:{
+                    if (successBlock) {
+                        successBlock(nil);
+                    }
+                }break;
+                case -1009:{
+                    if (failureBlock) {
+                        failureBlock(@"-1009:wrong网络中断");
+                    }
+                }break;
+                default:
+                    break;
+            }
+            if (failureBlock) {
+                failureBlock(error.localizedDescription);
+            }
         }
         
     }];
