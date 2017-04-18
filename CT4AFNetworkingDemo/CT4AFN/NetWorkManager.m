@@ -173,6 +173,7 @@
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
             [request setHTTPMethod:@"POST"];
             [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Contsetent-Type"];
+            [request addValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
             [request setHTTPBody:body];
             [request setTimeoutInterval:30.0f];
             NSURLSessionDataTask *dataTask = [[NetWorkManager shareManager] dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
