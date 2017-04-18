@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = 'CT4AFN'
-  s.version      = '0.2.2'
+  s.version      = '0.2.3'
   s.summary      = 'Code encapsulation for AFNetworking'
   s.homepage     = 'https://github.com/Chan4iOS/CT4AFNetworking'
   s.author       = "CT4 => 284766710@qq.com"
-  s.source       = {:git => 'https://github.com/Chan4iOS/CT4AFNetworking.git', :tag => "V#{s.version}"}
+  s.source       = {:git => 'https://github.com/Chan4iOS/CT4AFNetworking.git', :tag => "#{s.version}"}
   s.source_files = "CT4AFN/**/*.{h,m}"
   s.requires_arc = true
   s.libraries = 'z'
